@@ -43,28 +43,29 @@ export default {
         detail: ''
       },
       loading: true,
-      err: false,
+      err: false
     }
   },
   methods: {
-    getCat() {
-      this.$http.get('http://random.cat/meow')
+    getCat () {
+      this.$http.get('https://yesno.wtf/api')
         .then((response) => {
-          this.randomCat.url = response.data.file
+          console.log(response)
+          this.randomCat.url = response.data.image
           setTimeout(() => { this.loading = false }, 1000)
         })
         .catch((err) => {
           this.err = err
         })
     },
-    postCat() {
+    postCat () {
       console.log('postCat ', this.randomCat)
       this.$db.ref('cats').push(this.randomCat, () => {
-        this.$router.push('/');
+        this.$router.push('/')
       })
     }
   },
-  mounted: {
+  mounted: function () {
     this.getCat()
   }
 }
