@@ -42,10 +42,12 @@ export default{
   methods: {
     toggleSideNavLeft (route) {
       if (typeof (route) === 'object') {
+        console.log(this.$refs, 'route', route)
         this.$refs.leftSidenav.toggle()
       } else {
+        console.log(this.$refs, 'route', route)
         this.$refs.leftSidenav.toggle()
-        this.router.push(route)
+        this.$router.push({path: route})
       }
     }
   }
