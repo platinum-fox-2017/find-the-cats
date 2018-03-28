@@ -4,7 +4,7 @@ import Vue from 'vue'
 import VueFire from 'vuefire'
 import axios from 'axios'
 import App from './App'
-import router from 'router'
+import router from './router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import firebase from 'firebase'
@@ -19,7 +19,6 @@ Vue.prototype.$http = axios
 Vue.prototype.$db = firebaseApp.database()
 Vue.use(VueFire)
 Vue.use(VueMaterial)
-
 Vue.material.registerTheme({
   default: {
     primary: 'blue',
