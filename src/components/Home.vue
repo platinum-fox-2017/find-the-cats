@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="home">
     <h1>Home</h1>
-    <md-card v-for="cat in cats.slice().reverse()" v-bind:key="cat['.key']">
+    <md-card v-for="cat in latestCats" v-bind:key="cat['.key']">
       <md-card-media>
         <img :src="cat.url" :alt="cat.comment">
       </md-card-media>
@@ -28,8 +28,7 @@ export default {
   },
   computed: {
     latestCats: function () {
-      console.log(this.cats)
-      this.cats.reverse()
+      return this.cats.reverse()
     }
   }
 }
