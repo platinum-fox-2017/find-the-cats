@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+<div id="app">
     <!-- Toolbar header -->
     <md-toolbar id="toolbar-header">
       <md-button class="md-icon-button" @click.native="toggleSideNavLeft">
@@ -29,24 +29,23 @@
         </md-list>
       </div>
     </md-sidenav>
-
     <md-layout md-gutter class="container">
       <router-view></router-view>
     </md-layout>
-  </div>
+</div>    
 </template>
 
 <script>
-export {
-  name: 'app'
+export default {
+  name: 'app',
   methods: {
-    toggleSideNavLeft(route) {
-      if (typeof (route) == 'object') {
+    toggleSideNavLeft (route) {
+      if (typeof (route) === 'object') {
         this.$refs.leftSidenav.toggle()
       } else {
         this.$refs.leftSidenav.toggle()
-        this.router.push(route)
       }
+      this.$router.push(route)
     }
   }
 }
