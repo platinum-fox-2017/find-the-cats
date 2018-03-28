@@ -28,7 +28,6 @@ export default {
   },
   computed: {
     latestCats: function () {
-      console.log(this.cats.reverse())
       return this.cats.reverse()
     }
   }
