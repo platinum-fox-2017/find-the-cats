@@ -26,8 +26,6 @@ export default {
   },
   computed: {
     latestCats () {
-      console.log(this.$db)
-      console.log(this.$http)
       this.cats.reverse()
     }
   }

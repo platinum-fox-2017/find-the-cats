@@ -31,7 +31,7 @@
     </md-sidenav>
 
     <md-layout md-gutter class="container">
-      <router-view/>
+      <router-view></router-view>
     </md-layout>
   </div>
 </template>
