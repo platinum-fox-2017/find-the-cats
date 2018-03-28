@@ -18,13 +18,13 @@
 
       <div class="phone-viewport">
         <md-list>
-          <md-list-item @click.native="toggleSideNavLeft({path:'/'})">
-          <!-- <router-link :to="{path: '/'}"> -->
+          <md-list-item class='button' @click.native="toggleSideNavLeft({path:'/'})">
+          <!-- <router-link :to="{path: '/'}"> -->  
             <md-icon>home</md-icon>
             <span>Home</span>
           <!-- </router-link> -->
           </md-list-item>
-          <md-list-item @click.native="toggleSideNavLeft({path:'/post'})">
+          <md-list-item class='button' @click.native="toggleSideNavLeft({path:'/post'})">
           <!-- <router-link :to="{path: '/post'}"> -->
             <md-icon>add</md-icon>
             <span>New Post</span>
@@ -66,4 +66,8 @@ export default{
   .md-sidenav-content {
     z-index: 9999 !important;
   }
+  .button {
+    cursor: pointer;
+  }
+ 
 </style>
