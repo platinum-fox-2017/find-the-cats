@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// import Home from '@/components/Home'
 const Home = () => import('@/components/Home')
 const Post = () => import('@/components/Post')
-const Detail = () => import('@/components/Detail')
+// const Detail = () => import('@/components/Detail')
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -17,12 +19,12 @@ export default new Router({
       path: '/post',
       name: 'Post',
       component: Post
-    },
-    {
-      path: '/detail/:id',
-      props: true,
-      name: 'Detail',
-      component: Detail
     }
+    // {
+    //   path: '/detail/:id',
+    //   props: true,
+    //   name: 'Detail',
+    //   component: Detail
+    // }
   ]
 })

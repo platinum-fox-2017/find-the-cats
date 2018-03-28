@@ -1,13 +1,15 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import Vuex from 'vuex'
 import VueFire from 'vuefire'
 import axios from 'axios'
 import App from './App'
-import router from 'router'
+import router from './router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import firebase from 'firebase'
+import { store } from './store'
 const config = {
   apiKey: 'AIzaSyBqyuyv9cLau8z4pv6U_FDJvf2sR11PlDc',
   databaseURL: 'https://progressive-tamvan.firebaseio.com',
@@ -17,6 +19,7 @@ const firebaseApp = firebase.initializeApp(config)
 
 Vue.prototype.$http = axios
 Vue.prototype.$db = firebaseApp.database()
+Vue.use(Vuex)
 Vue.use(VueFire)
 Vue.use(VueMaterial)
 
@@ -41,6 +44,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
