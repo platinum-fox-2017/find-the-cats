@@ -26,7 +26,7 @@ export default {
       cats: this.$db.ref('cats');
     }
   },
-  computed: {
+  computed () {
     latestCats: {
       this.cats.reverse()
     }
