@@ -19,12 +19,10 @@
       <div class="phone-viewport">
         <md-list>
           <md-list-item @click.native="toggleSideNavLeft('/')">
-            <md-icon>home</md-icon>
-            <span>Home</span>
+            <router-link :to="{name: 'Home'}">Home</router-link>
           </md-list-item>
           <md-list-item @click.native="toggleSideNavLeft('/post')">
-            <md-icon>add</md-icon>
-            <span>New Post</span>
+            <router-link :to="{name: 'Post'}">New Post</router-link>
           </md-list-item>
         </md-list>
       </div>
@@ -37,11 +35,11 @@
 </template>
 
 <script>
-export {
-  name: 'app'
+export default {
+  name: 'app',
   methods: {
-    toggleSideNavLeft(route) {
-      if (typeof (route) == 'object') {
+    toggleSideNavLeft (route) {
+      if (typeof (route) === 'object') {
         this.$refs.leftSidenav.toggle()
       } else {
         this.$refs.leftSidenav.toggle()
