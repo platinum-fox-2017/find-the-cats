@@ -5,7 +5,6 @@
         <div class="md-title">{{ cat.comment }}</div>
       </md-card-header-text>
     </md-card-header>
-
     <md-card-media>
       <img :src="cat.url" :alt="cat.comment">
     </md-card-media>
@@ -18,14 +17,18 @@
 
 <script>
 export default {
-  props: ['id'],
+  data () {
+    return {
+      id: this.$route.params.id
+    }
+  },
   firebase () {
     return {
       cat: {
         asObject: true,
-        source: this.$db.ref('cats').child(this.id),
+        source: this.$db.ref('cats').child(this.id)
       }
-    },
+    }
   }
 }
 </script>
