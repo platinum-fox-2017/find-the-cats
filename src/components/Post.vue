@@ -65,7 +65,7 @@ export default {
       })
     }
   },
-  mounted () {
+  mounted: function () {
     this.getCat()
   }
 }

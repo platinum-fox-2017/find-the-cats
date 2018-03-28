@@ -9,7 +9,6 @@
       <md-card-header>
         <div class="md-title">{{ cat.comment }}</div>
       </md-card-header>
-
       <md-card-actions>
         <router-link to="'/detail/'+cat['.key']">
           <md-button>Details</md-button>
