@@ -11,7 +11,7 @@
       </md-card-header>
 
       <md-card-actions>
-        <router-link to="'/detail/'+cat['.key']">
+        <router-link :to="'/detail/'+cat['.key']">
           <md-button>Details</md-button>
         </router-link>
       </md-card-actions>
@@ -21,14 +21,17 @@
 
 <script>
 export default {
-  firebase () {
-    {
-      cats: this.$db.ref('cats');
-    }
+  name: 'Home',
+  firebase: {
+    cats: this.$db.ref('cats')
+  },
+  created () {
+    console.log(this.$db)
+    console.log(this.$http)
   },
   computed: {
-    latestCats: {
-      this.cats.reverse()
+    latestCats () {
+      // return this.cats.reverse()
     }
   }
 }
