@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     getCat () {
-      this.$http.get('http://random.cat/meow')
+      this.$http.get('http://yesno.wtf')
         .then((response) => {
           this.randomCat.url = response.data.file
           setTimeout(() => { this.loading = false }, 1000)
@@ -58,10 +58,11 @@ export default {
         })
     },
     postCat () {
-      console.log('postCat ', this.randomCat)
+      console.log('methods/ before/ postCat ', this.randomCat)
       this.$db.ref('cats').push(this.randomCat, () => {
         this.$router.push('/')
       })
+      console.log('methods/ after/ postCat ', this.randomCat)
     }
   },
   mounted () {
