@@ -15,12 +15,12 @@ const config = {
 }
 const firebaseApp = firebase.initializeApp(config)
 
-Vue.config.productionTip = false
-
 Vue.use(VueFire)
 Vue.use(VueMaterial)
 Vue.prototype.$http = axios
 Vue.prototype.$db = firebaseApp.database()
+
+Vue.config.productionTip = false
 
 Vue.material.registerTheme({
   default: {

@@ -22,16 +22,14 @@
 <script>
 export default {
   name: 'Home',
-  firebase: {
-    cats: this.$db.ref('cats')
-  },
-  created () {
-    console.log(this.$db)
-    console.log(this.$http)
+  firebase () {
+    return {
+      cats: this.$db.ref('cats')
+    }
   },
   computed: {
     latestCats () {
-      // return this.cats.reverse()
+      return this.cats.reverse()
     }
   }
 }
