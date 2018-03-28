@@ -48,10 +48,10 @@ export default {
   },
   methods: {
     getCat () {
-      this.$http.get('http://yesorno.wtf')
+      this.$http.get('http://aws.random.cat/meow')
         .then((response) => {
           this.randomCat.url = response.data.file
-          setTimeout(() => { this.loading = false }, 1000)
+          setTimeout(() => { this.loading = false }, 5000)
         })
         .catch((err) => {
           this.err = err
