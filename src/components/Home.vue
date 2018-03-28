@@ -2,8 +2,8 @@
   <div id="home">
     <h1>Home</h1>
     <md-card v-for="cat in latestCats" :key="cat['.key']">
-      <md-card-media>
-        <img src="cat.url" :alt="cat.comment">
+      <md-card-media>{{cat['.key']}}
+        <img :src="cat.url" :alt="cat.comment">
       </md-card-media>
 
       <md-card-header>
@@ -11,7 +11,7 @@
       </md-card-header>
 
       <md-card-actions>
-        <router-link to="'/detail/'+cat['.key']">
+        <router-link :to="'detail/' + cat['.key']">
           <md-button>Details</md-button>
         </router-link>
       </md-card-actions>
@@ -22,14 +22,19 @@
 <script>
 export default {
   data () {
-
+    return {
+    }
   },
   firebase () {
-    // cats: this.$db.ref('cats')
+    // console.log('eksa was here')
+    return {
+      cats: this.$db.ref('cats')
+    }
   },
   computed: {
     latestCats () {
-      this.cats.reverse()
+      // console.log('run here', this.cats.reverse())
+      return this.cats.reverse()
     }
   }
 }
