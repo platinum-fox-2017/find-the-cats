@@ -51,7 +51,6 @@ export default {
       // this.$http.get('http://random.cat/meow')
       this.$http.get('https://yesno.wtf/api')
         .then((response) => {
-          console.log(response)
           // this.randomCat.url = response.data.file
           this.randomCat.url = response.data.image
           setTimeout(() => { this.loading = false }, 1000)
