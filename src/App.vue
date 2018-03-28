@@ -31,26 +31,27 @@
     </md-sidenav>
 
     <md-layout md-gutter class="container">
-      <router-view></router-view>
+      <router-view/>
     </md-layout>
   </div>
 </template>
 
 <script>
-export {
-  name: 'app'
+export default {
+  name: 'app',
   methods: {
-    toggleSideNavLeft(route) {
-      if (typeof (route) == 'object') {
+    toggleSideNavLeft (route) {
+      if (typeof (route) === 'object') {
         this.$refs.leftSidenav.toggle()
       } else {
         this.$refs.leftSidenav.toggle()
-        this.router.push(route)
+        this.$router.push(route)
       }
     }
   }
 }
 </script>
+
 
 <style>
   .container {
