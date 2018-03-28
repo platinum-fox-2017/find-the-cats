@@ -3,7 +3,7 @@
     <h1>Home</h1>
     <md-card v-for="cat in latestCats" :key="cat['.key']">
       <md-card-media>
-        <img src="cat.url" :alt="cat.comment">
+        <img :src="cat.url" :alt="cat.comment">
       </md-card-media>
 
       <md-card-header>
