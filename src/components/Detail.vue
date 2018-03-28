@@ -25,7 +25,7 @@ export default {
         asObject: true,
         source: this.$db.ref('cats').child(this.id),
       }
-    },
+    }
   }
 }
 </script>
