@@ -65,7 +65,7 @@ export default {
     }
   },
   mounted: {
-    this.getCat()
+    this:getCat()
   }
 }
 </script>
