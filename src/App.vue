@@ -37,8 +37,8 @@
 </template>
 
 <script>
-export {
-  name: 'app'
+export default {
+  name: 'app',
   methods: {
     toggleSideNavLeft(route) {
       if (typeof (route) == 'object') {
