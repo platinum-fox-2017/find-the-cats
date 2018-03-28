@@ -2,7 +2,7 @@
   <div id="home">
     <h1>Home</h1>
     <md-card v-for="cat in latestCats" :key="cat['.key']">
-      <md-card-media>{{cat['.key']}}
+      <md-card-media>
         <img :src="cat.url" :alt="cat.comment">
       </md-card-media>
 
