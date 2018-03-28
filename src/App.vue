@@ -41,6 +41,7 @@ export default {
   name: 'app',
   methods: {
     toggleSideNavLeft (route) {
+      console.log(typeof route)
       if (typeof (route) === 'object') {
         this.$refs.leftSidenav.toggle()
       } else {
