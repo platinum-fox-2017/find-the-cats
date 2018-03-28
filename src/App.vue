@@ -18,13 +18,17 @@
 
       <div class="phone-viewport">
         <md-list>
-          <md-list-item @click.native="toggleSideNavLeft('/')">
+          <md-list-item class='button' @click.native="toggleSideNavLeft('/')">
+          <!-- <router-link :to="{path: '/'}"> -->  
             <md-icon>home</md-icon>
             <span>Home</span>
+          <!-- </router-link> -->
           </md-list-item>
-          <md-list-item @click.native="toggleSideNavLeft('/post')">
+          <md-list-item class='button' @click.native="toggleSideNavLeft('/post')">
+          <!-- <router-link :to="{path: '/post'}"> -->
             <md-icon>add</md-icon>
             <span>New Post</span>
+          <!-- </router-link> -->
           </md-list-item>
         </md-list>
       </div>
@@ -37,15 +41,15 @@
 </template>
 
 <script>
-export {
-  name: 'app'
+export default{
+  name: 'app',
   methods: {
-    toggleSideNavLeft(route) {
-      if (typeof (route) == 'object') {
+    toggleSideNavLeft (route) {
+      if (typeof route === 'object') {
         this.$refs.leftSidenav.toggle()
       } else {
         this.$refs.leftSidenav.toggle()
-        this.router.push(route)
+        this.$router.push(route)
       }
     }
   }
@@ -66,4 +70,8 @@ export {
   .md-sidenav-content {
     z-index: 9999 !important;
   }
+  .button {
+    cursor: pointer;
+  }
+ 
 </style>
