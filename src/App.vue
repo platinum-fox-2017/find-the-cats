@@ -20,11 +20,11 @@
         <md-list>
           <md-list-item @click.native="toggleSideNavLeft('/')">
             <md-icon>home</md-icon>
-            <span>Home</span>
+            <span class="pointer">Home</span>
           </md-list-item>
           <md-list-item @click.native="toggleSideNavLeft('/post')">
             <md-icon>add</md-icon>
-            <span>New Post</span>
+            <span class="pointer">New Post</span>
           </md-list-item>
         </md-list>
       </div>
@@ -37,15 +37,17 @@
 </template>
 
 <script>
-export {
-  name: 'app'
+export default{
+  name: 'app',
   methods: {
-    toggleSideNavLeft(route) {
-      if (typeof (route) == 'object') {
+    toggleSideNavLeft (route) {
+      if (typeof (route) === 'object') {
+        console.log(this.$refs, 'route', route)
         this.$refs.leftSidenav.toggle()
       } else {
+        console.log(this.$refs, 'route', route)
         this.$refs.leftSidenav.toggle()
-        this.router.push(route)
+        this.$router.push({path: route})
       }
     }
   }
@@ -65,5 +67,8 @@ export {
   }
   .md-sidenav-content {
     z-index: 9999 !important;
+  }
+  .pointer 
+  {cursor: pointer;
   }
 </style>
